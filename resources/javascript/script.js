@@ -258,6 +258,9 @@ const printYourQuotes = () => {
 
 const searchQuote = () => {
 const word = document.getElementById('wordToSearch').value;
+if(word === ""){
+    document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>You did not type anything. Please type a word.</h2>`;
+}else{
 let quotesFound = [];
 let numberOfQuotesFound = 0;
 for(let i = 0; i < finalArray.length; i++){
@@ -278,6 +281,7 @@ let allFound = quotesFound.map((a) =>{
      }else{
 document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'>${word} found ${numberOfQuotesFound} times: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
      }
+    }
 }
 
 
