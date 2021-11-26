@@ -224,6 +224,10 @@ const getQuote = () => {
     const userQuote = document.getElementById('typeNewQuote').value;
     const userQuoteAuthor = document.getElementById('typeNewAuthor').value;
 
+    if(userQuote === '' || userQuoteAuthor === ''){
+        document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>Please type both quote and author</h2>`;
+    }else{
+
     if(checkFinalArray(userQuote)){
         document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>That quote is already added</h2>`;
     }else{
@@ -233,7 +237,7 @@ const getQuote = () => {
     usersQuotes.push(newQuote);
     document.getElementById('printYourQuotes').innerHTML = `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex]._sentence}  <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
     finalArray.push(newQuote);
-}};
+}}};
 
 
 //funtion to print next quote added by the user
