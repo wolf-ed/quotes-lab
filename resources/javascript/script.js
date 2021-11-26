@@ -206,13 +206,27 @@ const prevQuote = () => {
     }
 };
 
+const checkFinalArray = (word) => {
+    for(let i = 0; i < finalArray.length; i++){
+        if(finalArray[i].sentence === word){
+            return true
+        }
+    }
+    return false
+}
+
 const getQuote = () => {
     const userQuote = document.getElementById('typeNewQuote').value;
     const userQuoteAuthor = document.getElementById('typeNewAuthor').value;
-    let newQuote = quotesMaker(userQuote, userQuoteAuthor);
+
+    if(checkFinalArray(userQuote)){
+        document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>That quote is already added</h2>`;
+    }else{
+        let newQuote = quotesMaker(userQuote, userQuoteAuthor);
     usersQuotes.push(newQuote);
+    document.getElementById('printYourQuotes').innerHTML = `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex]._sentence}  <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
     finalArray.push(newQuote);
-};
+}};
 
 let usersQuoteIndex = 0;
 const printYourQuotes = () => {
