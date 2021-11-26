@@ -1,4 +1,4 @@
-# Version of Quote-wiser where it is possible to add new quotes
+# Version of Quote-wiser where I will add new functionalities
 
 ## Author:  Ed Wolf
 ## Table of contents
