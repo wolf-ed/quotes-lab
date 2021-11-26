@@ -6,6 +6,7 @@
 ## Table of contents
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
+* [Examples](#Examples)
 
 
 ## Introduction
@@ -27,3 +28,8 @@ This is a short project, with these functionalities:
 * Git and GitHub
 * Node
 * VisualStudio Code
+
+## Examples
+
+![discipline](https://user-images.githubusercontent.com/91706719/143514461-0a1d3258-0ee8-4523-b3a3-6d6ed09eee8e.png)
+
