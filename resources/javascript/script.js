@@ -228,6 +228,8 @@ const getQuote = () => {
         document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>That quote is already added</h2>`;
     }else{
         let newQuote = quotesMaker(userQuote, userQuoteAuthor);
+        document.getElementById("typeNewQuote").value = "";
+        document.getElementById("typeNewAuthor").value = "";
     usersQuotes.push(newQuote);
     document.getElementById('printYourQuotes').innerHTML = `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex]._sentence}  <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
     finalArray.push(newQuote);
@@ -264,8 +266,14 @@ for(let i = 0; i < finalArray.length; i++){
 let allFound = quotesFound.map((a) =>{
     return `${a._sentence}  <br> <span id="authorsquotes">by ${a._author}</span><br><br>`;
      })
-document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'> ${numberOfQuotesFound} found: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
-
+     document.getElementById("wordToSearch").value = "";
+     if(numberOfQuotesFound === 0){
+        document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>There is no quote with "${word}", you should add some!</h2>`;
+     }else if(numberOfQuotesFound === 1){
+        document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'>${word} found ${numberOfQuotesFound} time: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
+     }else{
+document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'>${word} found ${numberOfQuotesFound} times: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
+     }
 }
 
 
