@@ -72,6 +72,15 @@ article h2 {
     text-align: center;
 }
 
+.buttonsBox2 {
+    font-size: 1rem;
+    width: fit-content;
+    padding: 0.5em;
+    background-color: black;
+    margin: 0.5em auto 0.5em auto;
+    text-align: center;
+    border-top: solid white 0.2em;
+}
 
 .navigationButton {
     margin: 0 auto;
