@@ -235,7 +235,8 @@ const word = document.getElementById('wordToSearch').value;
 let quotesFound = [];
 let numberOfQuotesFound = 0;
 for(let i = 0; i < finalArray.length; i++){
-    if(finalArray[i].sentence.split(' ').some(Word => Word === word)){
+    let toUpper = finalArray[i].sentence.toUpperCase();
+    if(toUpper.split(' ').some(Word => Word === word.toUpperCase())){
         quotesFound.push(finalArray[i]);
         numberOfQuotesFound++;
     }
