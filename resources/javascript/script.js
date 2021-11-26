@@ -106,6 +106,7 @@ const printAuthorsButton = document.getElementById('seeAuthors');
 const printYourQuotesButton = document.getElementById('printYourQuotesButton');
 const addNewQuote = document.getElementById('newQuote');
 const seeAllQuotes = document.getElementById('allQuotes');
+const buttonSearch = document.getElementById('searchQuotesByWord');
 
 const compare = (arr, num) =>{
     return arr.some(numb => num === numb)
@@ -194,6 +195,7 @@ const printAllFavs = () => {
 }
 
 
+//function to print previous quote
 const prevQuote = () => {
      if(incDecrorderDisplayed > 0){
         incDecrorderDisplayed = incDecrorderDisplayed -1 ;
@@ -206,6 +208,8 @@ const prevQuote = () => {
     }
 };
 
+
+//function to check if a quote is already added
 const checkFinalArray = (word) => {
     for(let i = 0; i < finalArray.length; i++){
         if(finalArray[i].sentence === word){
@@ -215,6 +219,7 @@ const checkFinalArray = (word) => {
     return false
 }
 
+//function to add a new quote
 const getQuote = () => {
     const userQuote = document.getElementById('typeNewQuote').value;
     const userQuoteAuthor = document.getElementById('typeNewAuthor').value;
@@ -228,6 +233,8 @@ const getQuote = () => {
     finalArray.push(newQuote);
 }};
 
+
+//funtion to print next quote added by the user
 let usersQuoteIndex = 0;
 const printYourQuotes = () => {
     if(usersQuoteIndex < usersQuotes.length){
@@ -244,7 +251,6 @@ const printYourQuotes = () => {
 
 
 const searchQuote = () => {
-    
 const word = document.getElementById('wordToSearch').value;
 let quotesFound = [];
 let numberOfQuotesFound = 0;
@@ -261,9 +267,9 @@ let allFound = quotesFound.map((a) =>{
 document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'> ${numberOfQuotesFound} found: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
 
 }
-const buttonSearch = document.getElementById('searchQuotesByWord');
 
-buttonSearch.addEventListener('click', searchQuote)
+
+
 
 
 const printAllAuthors = () => {
@@ -305,3 +311,4 @@ printYourQuotesButton.addEventListener('click', printYourQuotes);
 addNewQuote.addEventListener('click', getQuote);
 printAuthorsButton.addEventListener('click', printAllAuthors);  
 seeAllQuotes.addEventListener('click', printAllQuotes);
+buttonSearch.addEventListener('click', searchQuote)
