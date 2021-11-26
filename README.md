@@ -1,4 +1,4 @@
-# Version of Quote-wiser where I will add new functionalities
+# New Version of my project Quote-wiser where I will add new functionalities
 
 # Link **https://wolf-ed.github.io/quotes-lab/**
 
