@@ -1,4 +1,4 @@
-# Version of Quote-wiser where I will add new functionalities
+# New Version of my project Quote-wiser where I will add new functionalities
 
 # Link **https://wolf-ed.github.io/quotes-lab/**
 
@@ -18,6 +18,9 @@ This is a short project, with these functionalities:
 * Printrint all your Favorite Quotes --> See Favs
 * Add new quotes                     --> Press to submit Quote
 * See the quotes you added           --> See your Quotes
+* Search quotes                      --> Search
+* See all authors                    --> See Authors
+* See all quotes, alphabetical order --> All Quotes
 
 ## Technologies
 
