@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .addQuote {
+      text-align: center;
+  }
+
+
+h1 {
+    color: white;
+}
+ input {
+     display: block;
+     width: 20rem;
+     margin: 1em auto;
+ }
+
+ #typeNewAuthor{
+     max-width: 15rem;
+ }
+
+
+header {
+    font-weight: 900;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em auto 2em auto;
+    justify-content: center;
+    background-color: black;
+    text-align: center;
+    display: block;
+    border-bottom: 0.25em solid white;
+}
+
+body {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    background-color: black;
+}
+
+h2#warning {
+    color: red;
+}
+
+.quotesBox {
+    min-height: 10rem;
+}
+
+article h2 {
+    display: block;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin: 3% 5%;
+    background-color: black;
+}
+
+#successfulAction{
+    color: #10E013;
+}
+
+.buttonsBox {
+    font-size: 1rem;
+    width: fit-content;
+    padding: 0.5em;
+    background-color: black;
+    margin: 0.5em auto 0.5em auto;
+    text-align: center;
+}
+
+
+.navigationButton {
+    margin: 0 auto;
+    width: fit-content;
+    background-image: linear-gradient(#42A1EC, #0070C9);
+    border: 1px solid #0077CC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 6em;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    webkit-user-select: none; 
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+button {
+    display: inline; 
+    margin: 0.5em 0.5em;
+    background-image: linear-gradient(#42A1EC, #0070C9);
+    border: 1px solid #0077CC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 6em;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    webkit-user-select: none; 
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+button:disabled {
+    cursor: default;
+    opacity: .3;
+}
+button:hover {
+    background-image: linear-gradient(#51A9EE, #147BCD);
+    border-color: #1482D0;
+    text-decoration: none;
+}
+button:active {
+    background-image: linear-gradient(#3D94D9, #0067B9);
+    border-color: #006DBC;
+    outline: none;
+}
+button:focus {
+    box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+    outline: none;
+}
+
+footer {
+    margin-top: 0.5em;
+    padding: 0.5rem;
+    background-color: black;
+    text-align: center;
+    border-top: 0.25em solid white;
+    border-style:solid;
+  }
+  footer h2 {
+    padding: 1em 2em;
+    display: inline;
+    color: white;
+  }
+
+  footer a {
+    padding: 1em 2em;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+  }
+
+  h2 span#authorsquotes{
+      display: block;
+      width: fit-content;
+      font-style: italic;
+      background-color: black;
+      position: relative;
+      left: 15%
+  }
+  .authorsquotes {
+     padding-right: 1em;;
+  }

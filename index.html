@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quote-wiser</title>
+    <link rel="stylesheet" href="./resources/css/styles.css" />
+</head>
+<body>
+    <header id="title"><h1>QUOTE-WISER</h1></header>
+    
+    <section class="buttonsBox">
+        
+        <button role ="button" id="prev">Prev</button>
+       <!-- <button role ="button" id="likeb">Like</button>-->
+        <button role ="button" id="favb">Add Fav</button>
+        <button role ="button" id="printFavs">See Favs</button>
+        <button role ="button" id="seeAuthors">See Authors</button>
+        <button role ="button" id="allQuotes">All Quotes</button>
+        <button role ="button" id="nextb">Next</button>
+    </section>
+    
+    <article class="quotesBox">
+        <h2 id="placeToPrint">Press NEXT to print the first Quote</h2>
+        
+    </article>
+
+    <article class="buttonsBox">
+        <h2>Write your quote: </h2>
+        <input type="text" id="typeNewQuote" placeholder="Type new Quote" onblur="getVal ()">
+        <input type="text" id="typeNewAuthor" placeholder="Type Quote's Author" onblur="getVal ()">
+        
+        <button role ="button" id="newQuote">Press to submit Quote</button>
+   
+    </section> 
+<br>
+        <button role ="button" id="printYourQuotesButton">See your Quotes</button>
+ 
+        <h2 id="printYourQuotes">Print your quotes here</h2>
+    </article>
+
+    <article class="buttonsBox">
+    <h2>Search quotes: </h2>
+    <input type="text" id="wordToSearch" placeholder="Type word to search: " onblur="getVal ()">
+        
+        <button role ="button" id="searchQuotesByWord">Search</button>
+        <h2 id="quotesFound"></h2>
+    </article>
+
+  
+
+    <footer>
+        <a>wolf7ed@gmail.com</a>
+        <a href="https://github.com/wolf-ed" target="_blank">GitHub</a>
+    </footer>
+
+
+
+    <script type="module" src="./resources/javascript/script.js" defer></script>
+</body>
+</html>
