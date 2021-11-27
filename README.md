@@ -34,5 +34,7 @@ This is a short project, with these functionalities:
 
 ## Examples
 
-![discipline](https://user-images.githubusercontent.com/91706719/143514461-0a1d3258-0ee8-4523-b3a3-6d6ed09eee8e.png)
+![discipline](https://user-images.githubusercontent.com/91706719/143671858-ba5883db-a072-49cb-8047-c9696aa63a7b.png)
+![forward](https://user-images.githubusercontent.com/91706719/143671863-2b2e9cb5-bcab-4e3f-93a4-18eb1784dcbc.png)
+
 
