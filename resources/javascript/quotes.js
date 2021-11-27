@@ -1,7 +1,7 @@
 let sourceQuote =  
      `If you’re not stubborn, you’ll give up on experiments too soon. And if you’re not flexible, you’ll pound your head against the wall and you won’t see a different solution to a problem you’re trying to solve.
-     Jeff Bezos
-     When something is important enough, you do it even if the odds are not in your favor.
+    Jeff Bezos
+    When something is important enough, you do it even if the odds are not in your favor.
     Elon Musk
     If you get up in the morning and think the future is going to be better, it is a bright day. Otherwise, it's not.
     Elon Musk
