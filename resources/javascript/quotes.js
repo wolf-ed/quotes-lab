@@ -1,5 +1,7 @@
 let sourceQuote =  
-     `When something is important enough, you do it even if the odds are not in your favor.
+     `If you’re not stubborn, you’ll give up on experiments too soon. And if you’re not flexible, you’ll pound your head against the wall and you won’t see a different solution to a problem you’re trying to solve.
+     Jeff Bezos
+     When something is important enough, you do it even if the odds are not in your favor.
     Elon Musk
     If you get up in the morning and think the future is going to be better, it is a bright day. Otherwise, it's not.
     Elon Musk
@@ -499,6 +501,8 @@ let sourceQuote =
     Barbara Kingsolver
     Hope is the foundation of patience.
     John Calvin
+    When hope animates us there is a vigour in the whole body.
+    John Calvin
     Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all.
     Dale Carnegie
     When you have lost hope, you have lost everything. And when you think all is lost, when all is dire and bleak, there is always hope.
@@ -553,8 +557,6 @@ let sourceQuote =
     G. K. Chesterton
     You must not lose faith in humanity. Humanity is an ocean; if a few drops of the ocean are dirty, the ocean does not become dirty.
     Mahatma Gandhi
-    When hope animates us there is a vigour in the whole body.
-    John Calvin
     Neither should a ship rely on one small anchor, nor should life rest on a single hope.
     Epictetus
     The nearer to heaven in hopes, the farther from earth in desires.
