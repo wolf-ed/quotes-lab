@@ -284,13 +284,22 @@ document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'>${
     }
 }
 
-
+const compareAuthorsNames = (a, b) =>{
+    if(a._author < b._author){
+        return -1;
+    }
+    if(a._author > b._author){
+        return 1;
+    }
+    return 0;
+}
 
 
 
 const printAllAuthors = () => {
     let arrayAuthors = getAuthors(finalArray);
-    let allAuthors = arrayAuthors.map((a) =>{
+    let orderAuthors = arrayAuthors.sort(compareAuthorsNames);
+    let allAuthors = orderAuthors.map((a) =>{
         return `${a._author} - with ${a._numberQuotes} quotes. <br><br>`;
          })
          document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> ${arrayAuthors.length} authors: </h2><h2> ${allAuthors.join('\n')} <br><a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
