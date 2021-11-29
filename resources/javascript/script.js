@@ -275,11 +275,11 @@ let allFound = quotesFound.map((a) =>{
      })
      document.getElementById("wordToSearch").value = "";
      if(numberOfQuotesFound === 0){
-        document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>There is no quote with "${word}", you should add some!</h2>`;
+        document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>There is no quote with <span class="textToSearch">${word}"</span>, you should add some!</h2>`;
      }else if(numberOfQuotesFound === 1){
-        document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'>${word} found ${numberOfQuotesFound} time: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
+        document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'><span class="textToSearch">${word}</span> found ${numberOfQuotesFound} time: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
      }else{
-document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'>${word} found ${numberOfQuotesFound} times: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
+document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'><span class="textToSearch">${word}</span> found ${numberOfQuotesFound} times: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
      }
     }
 }
