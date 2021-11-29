@@ -198,6 +198,7 @@ footer {
     }
     article{
         width: 90%;
+        margin: auto;
     }
     h2 span#authorsquotes{
         width: 60%;
