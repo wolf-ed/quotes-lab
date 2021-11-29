@@ -186,31 +186,27 @@ footer {
      padding-right: 1em;;
   }
 
-
   .textToSearch {
       color: #7D8BFA;
-      width: 25em;
   }
 
   @media only screen and (max-width: 480px) {
-    h2{
-        width: 90%;
+    h2 span#authorsquotes{
+        left: 35%;
+        padding-right: 2em;
+        width: 80%;
+        
+    }
+     #wordToSearch, #typeNewQuote{
+    width: 20em;
+    }
+
+    #typeNewAuthor{
+        width: 15em;
     }
     article{
-        width: 90%;
-        margin: auto;
+        width: fit-content;
+        max-width: 95%;
+        margin: 0 auto 0 auto;
     }
-    h2 span#authorsquotes{
-        width: 60%;
-        left: 50%;
-        padding-right: 1em;
-        margin-right: 1em;
-  }
-   #wordToSearch, #typeNewQuote{
-       width: 20em;
-   }
-
-   #typeNewAuthor{
-       width: 15em;
-   }
 }
