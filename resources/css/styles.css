@@ -193,6 +193,12 @@ footer {
   }
 
   @media only screen and (max-width: 480px) {
+    h2{
+        width: 90%;
+    }
+    article{
+        width: 90%;
+    }
     h2 span#authorsquotes{
         width: 60%;
         left: 50%;
