@@ -186,12 +186,24 @@ footer {
      padding-right: 1em;;
   }
 
+
   .textToSearch {
       color: #7D8BFA;
+      width: 25em;
   }
 
   @media only screen and (max-width: 480px) {
     h2 span#authorsquotes{
-        left: 35%;
-        padding-right: 2em;
-  }}
+        width: 60%;
+        left: 50%;
+        padding-right: 1em;
+        margin-right: 1em;
+  }
+   #wordToSearch, #typeNewQuote{
+       width: 20em;
+   }
+
+   #typeNewAuthor{
+       width: 15em;
+   }
+}
