@@ -34,9 +34,11 @@ This is a short project, with these functionalities:
 
 ## Examples
 
-![discipline](https://user-images.githubusercontent.com/91706719/143924035-5c1046d9-96dd-4433-a42a-6d07fed0bc37.png)
-![forward](https://user-images.githubusercontent.com/91706719/143671863-2b2e9cb5-bcab-4e3f-93a4-18eb1784dcbc.png)
-![if you](https://user-images.githubusercontent.com/91706719/143923880-02bde4d3-22f8-4831-94ec-0df7c01a8952.png)
+![discipline](https://user-images.githubusercontent.com/91706719/143924449-d2f561e1-d435-4bff-8b8d-cc79c9dcf77a.png)
+![discipline2](https://user-images.githubusercontent.com/91706719/143924588-eacfbc7f-d7ee-4715-b9fb-20b747044a0c.png)
+![if you](https://user-images.githubusercontent.com/91706719/143924457-b16db1b8-f5c5-4b21-8f68-f552a214b0fc.png)
+
+
 
 
 
