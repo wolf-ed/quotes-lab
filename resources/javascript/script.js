@@ -265,7 +265,7 @@ let quotesFound = [];
 let numberOfQuotesFound = 0;
 for(let i = 0; i < finalArray.length; i++){
     let toUpper = finalArray[i].sentence.toUpperCase();
-        if((finalArray[i].sentence.search(word) != -1) || (toUpper.split(' ').some(Word => Word === word.toUpperCase()))){
+        if((finalArray[i].sentence.search(word) != -1) || (toUpper.split(/,| |./).some(Word => Word === word.toUpperCase()))){
         quotesFound.push(finalArray[i]);
         numberOfQuotesFound++;
     }
