@@ -257,7 +257,7 @@ const printYourQuotes = () => {
 
 
 const searchQuote = () => {
-const word = document.getElementById('wordToSearch').value;
+let word = document.getElementById('wordToSearch').value;
 if(word === ""){
     document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>You did not type anything. Please type a word.</h2>`;
 }else{
@@ -265,7 +265,7 @@ let quotesFound = [];
 let numberOfQuotesFound = 0;
 for(let i = 0; i < finalArray.length; i++){
     let toUpper = finalArray[i].sentence.toUpperCase();
-        if((finalArray[i].sentence.search(word) != -1) || (toUpper.split(/,| |./).some(Word => Word === word.toUpperCase()))){
+        if((toUpper.search(word.toUpperCase()) != -1) || (toUpper.split(/,| |./).some(Word => Word === word.toUpperCase()))){
         quotesFound.push(finalArray[i]);
         numberOfQuotesFound++;
     }
