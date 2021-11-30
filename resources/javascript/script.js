@@ -257,7 +257,7 @@ const printYourQuotes = () => {
 
 
 const searchQuote = () => {
-const word1 = document.getElementById('wordToSearch').value;
+const word = document.getElementById('wordToSearch').value;
 if(word === ""){
     document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>You did not type anything. Please type a word.</h2>`;
 }else{
