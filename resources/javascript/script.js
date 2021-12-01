@@ -153,7 +153,8 @@ const printNextQuote = () => {
 
 
     //select where it will be printed
-    document.getElementById('placeToPrint').innerHTML = `<h2>${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2> ` ;
+    document.getElementById('placeToPrint').innerHTML = 
+    `<h2>${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2> ` ;
    }
 };
 
@@ -171,7 +172,8 @@ const addQuoteToFav = () => {
     addToFav(finalArray[orderDisplayed])
     document.getElementById('placeToPrint').innerHTML = `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
     }else{
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> You already added that quote to favs. </h2>`
+        document.getElementById('placeToPrint').innerHTML =
+         `<h2 id='warning'> You already added that quote to favs. </h2>`
     }
 
 };
@@ -188,7 +190,8 @@ const printAllFavs = () => {
        }else if(favsArray.length > 1 && favsArray.length < 3){
         document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> Your Favs: </h2><h2> ${allFavs.join('\n')} </h2>` ;
        }else{
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> Your Favs: </h2><h2> ${allFavs.join('\n')}  <a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
+        document.getElementById('placeToPrint').innerHTML = 
+        `<h2 id='successfulAction'> Your Favs: </h2><h2> ${allFavs.join('\n')}  <a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
        }
        //  
    /*Pay close attention to the .join('\n'), without it, when there are more than 1 element, it will print a comma between them. */
@@ -200,7 +203,8 @@ const prevQuote = () => {
      if(incDecrorderDisplayed > 0){
         incDecrorderDisplayed = incDecrorderDisplayed -1 ;
         orderDisplayed = arrayRandom[incDecrorderDisplayed];
-   document.getElementById('placeToPrint').innerHTML = `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2>` ;
+   document.getElementById('placeToPrint').innerHTML = 
+   `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2>` ;
     }else if(incDecrorderDisplayed === 0){
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>` ;
     }else if(incDecrorderDisplayed === -1){
@@ -235,7 +239,9 @@ const getQuote = () => {
         document.getElementById("typeNewQuote").value = "";
         document.getElementById("typeNewAuthor").value = "";
     usersQuotes.push(newQuote);
-    document.getElementById('printYourQuotes').innerHTML = `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex]._sentence}  <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
+    document.getElementById('printYourQuotes').innerHTML = 
+    `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex]._sentence} 
+     <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
     finalArray.push(newQuote);
 }}};
 
@@ -244,11 +250,15 @@ const getQuote = () => {
 let usersQuoteIndex = 0;
 const printYourQuotes = () => {
     if(usersQuoteIndex < usersQuotes.length){
-        document.getElementById('printYourQuotes').innerHTML = `<h2> ${usersQuotes[usersQuoteIndex]._sentence}  <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
+        document.getElementById('printYourQuotes').innerHTML = 
+        `<h2> ${usersQuotes[usersQuoteIndex]._sentence}  
+        <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
     usersQuoteIndex++;
     }else{
     usersQuoteIndex = 0;
-    document.getElementById('printYourQuotes').innerHTML = `<h2> ${usersQuotes[usersQuoteIndex]._sentence}  <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
+    document.getElementById('printYourQuotes').innerHTML = 
+    `<h2> ${usersQuotes[usersQuoteIndex]._sentence}  
+    <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
     }
 }
 
@@ -259,7 +269,8 @@ const printYourQuotes = () => {
 const searchQuote = () => {
 const word = document.getElementById('wordToSearch').value;
 if(word === ""){
-    document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>You did not type anything. Please type a word.</h2>`;
+    document.getElementById('quotesFound').innerHTML = 
+    `<h2 id='warning'>You did not type anything. Please type a word.</h2>`;
 }else{
 let quotesFound = [];
 let numberOfQuotesFound = 0;
@@ -275,11 +286,16 @@ let allFound = quotesFound.map((a) =>{
      })
      document.getElementById("wordToSearch").value = "";
      if(numberOfQuotesFound === 0){
-        document.getElementById('quotesFound').innerHTML = `<h2 id='warning'>There is no quote with <span class="textToSearch">"${word}"</span>, you should add some!</h2>`;
+        document.getElementById('quotesFound').innerHTML = 
+        `<h2 id='warning'>There is no quote with <span class="textToSearch">"${word}"</span>, you should add some!</h2>`;
      }else if(numberOfQuotesFound === 1){
-        document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'><span class="textToSearch">"${word}"</span> found ${numberOfQuotesFound} time: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
+        document.getElementById('quotesFound').innerHTML = 
+        `<h2 id='successfulAction'><span class="textToSearch">"${word}"</span> found ${numberOfQuotesFound} time: </h2> 
+        <br> <h2>${allFound.join('\n')}</h2>  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
      }else{
-document.getElementById('quotesFound').innerHTML = `<h2 id='successfulAction'><span class="textToSearch">"${word}"</span> found ${numberOfQuotesFound} times: </h2> <br> ${allFound.join('\n')}  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
+        document.getElementById('quotesFound').innerHTML = 
+        `<h2 id='successfulAction'><span class="textToSearch">"${word}"</span> found ${numberOfQuotesFound} times: </h2>
+       <br> <h2>${allFound.join('\n')}</h2>  <br><a href="#" class="navigationButton">Go back to the Top</a>`;
      }
     }
 }
@@ -302,7 +318,9 @@ const printAllAuthors = () => {
     let allAuthors = orderAuthors.map((a) =>{
         return `${a._author} - with ${a._numberQuotes} quotes. <br><br>`;
          })
-         document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> ${arrayAuthors.length} authors: </h2><h2> ${allAuthors.join('\n')} <br><a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
+         document.getElementById('placeToPrint').innerHTML = 
+         `<h2 id='successfulAction'> ${arrayAuthors.length} authors: </h2>
+         <h2> ${allAuthors.join('\n')} <br><a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
 }  
 
 
@@ -322,7 +340,8 @@ let allQuotesArray = finalArray.sort(compareLengthQuotes);
 let allQuotesOrdered = allQuotesArray.map((a) =>{
 return `${a._sentence} <br><span id="authorsquotes"> By  ${a._author} </span><br><br>`;
 })
-document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> ${finalArray.length} quotes: </h2><h2> ${allQuotesOrdered.join('\n')}  <a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
+document.getElementById('placeToPrint').innerHTML = 
+`<h2 id='successfulAction'> ${finalArray.length} quotes: </h2><h2> ${allQuotesOrdered.join('\n')}  <a href="#" class="navigationButton">Go back to the Top</a></h2>` ;
 }
 
 
