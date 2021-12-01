@@ -38,7 +38,7 @@ This is a short project, with these functionalities:
 ![discipline](https://user-images.githubusercontent.com/91706719/143940293-66ef1b16-dfaf-4cd3-9c5a-03918aefca15.png)
 ![discipline2](https://user-images.githubusercontent.com/91706719/143924588-eacfbc7f-d7ee-4715-b9fb-20b747044a0c.png)
 ![if you](https://user-images.githubusercontent.com/91706719/143924457-b16db1b8-f5c5-4b21-8f68-f552a214b0fc.png)
-![motivate](https://user-images.githubusercontent.com/91706719/144300498-61e3c962-1c7a-48d9-9240-b9c6af3d3889.png)
+![motivate](https://user-images.githubusercontent.com/91706719/144301631-85b7a3bc-d08d-4f4c-95a7-030468e6e2f6.png)
 
 
 
