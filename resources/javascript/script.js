@@ -9,7 +9,7 @@ const quotesMaker = (sentence, author) => {
         _sentence: sentence,
         _author: author,
         _quoteIndex: 0,
-        fav: false,
+        fav: 0,
         likes: 0,
         get author(){
             return this._author;
@@ -168,7 +168,7 @@ const addQuoteToFav = () => {
     if(incDecrorderDisplayed === -1){
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> There is no quote to add, press Next to see the first quote. </h2>` ;
        }else if(!compareQuote(favsArray, finalArray[orderDisplayed]._sentence)){
-        finalArray[orderDisplayed].fav = true;
+        finalArray[orderDisplayed].fav++ ;
     addToFav(finalArray[orderDisplayed])
     document.getElementById('placeToPrint').innerHTML = `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
     }else{
