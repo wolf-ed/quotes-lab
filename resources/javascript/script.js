@@ -150,7 +150,7 @@ const printNextQuote = () => {
    }else{
 
   orderDisplayed = arrayRandom[incDecrorderDisplayed];
-
+  document.getElementById('favb').style = 'visibility: visible;' ;
 
     //select where it will be printed
     document.getElementById('placeToPrint').innerHTML = 
@@ -165,6 +165,7 @@ const compareQuote = (arr, num) =>{
 //implement add to favs
 
 const addQuoteToFav = () => {
+    document.getElementById('favb').style = 'visibility: hidden;' ;
     if(incDecrorderDisplayed === -1){
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> There is no quote to add, press Next to see the first quote. </h2>` ;
        }else if(!compareQuote(favsArray, finalArray[orderDisplayed]._sentence)){
@@ -180,6 +181,7 @@ const addQuoteToFav = () => {
 
 
 const printAllFavs = () => {
+    document.getElementById('favb').style = 'visibility: hidden;' ;
     let allFavs = favsArray.map((a) =>{
       return `${a._sentence} <br><span id="authorsquotes"> By  ${a._author} </span><br><br>`;
        })
@@ -200,6 +202,7 @@ const printAllFavs = () => {
 
 //function to print previous quote
 const prevQuote = () => {
+    document.getElementById('favb').style = 'visibility: visible;' ;
      if(incDecrorderDisplayed > 0){
         incDecrorderDisplayed = incDecrorderDisplayed -1 ;
         orderDisplayed = arrayRandom[incDecrorderDisplayed];
@@ -225,6 +228,7 @@ const checkFinalArray = (word) => {
 
 //function to add a new quote
 const getQuote = () => {
+    document.getElementById('favb').style = 'visibility: hidden;' ;
     const userQuote = document.getElementById('typeNewQuote').value;
     const userQuoteAuthor = document.getElementById('typeNewAuthor').value;
 
@@ -313,6 +317,7 @@ const compareAuthorsNames = (a, b) =>{
 
 
 const printAllAuthors = () => {
+    document.getElementById('favb').style = 'visibility: hidden;' ;
     let arrayAuthors = getAuthors(finalArray);
     let orderAuthors = arrayAuthors.sort(compareAuthorsNames);
     let allAuthors = orderAuthors.map((a) =>{
@@ -336,6 +341,7 @@ const compareLengthQuotes = (a, b) =>{
 
 
 const printAllQuotes = () => {
+    document.getElementById('favb').style = 'visibility: hidden;' ;
 let allQuotesArray = finalArray.sort(compareLengthQuotes);
 let allQuotesOrdered = allQuotesArray.map((a) =>{
 return `${a._sentence} <br><span id="authorsquotes"> By  ${a._author} </span><br><br>`;

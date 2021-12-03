@@ -50,6 +50,10 @@ h2#warning {
     min-height: 10rem;
 }
 
+#favb{
+    visibility: hidden;
+} 
+
 article h2 {
     display: block;
     justify-content: center;
