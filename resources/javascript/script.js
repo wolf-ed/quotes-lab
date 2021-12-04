@@ -11,6 +11,7 @@ const quotesMaker = (sentence, author) => {
         _quoteIndex: 0,
         fav: 0,
         likes: 0,
+        timesSeen: 0,
         get author(){
             return this._author;
         },
@@ -151,6 +152,7 @@ const printNextQuote = () => {
 
   orderDisplayed = arrayRandom[incDecrorderDisplayed];
   document.getElementById('favb').style = 'visibility: visible;' ;
+  finalArray[orderDisplayed].timesSeen++;
 
     //select where it will be printed
     document.getElementById('placeToPrint').innerHTML = 
@@ -206,6 +208,7 @@ const prevQuote = () => {
      if(incDecrorderDisplayed > 0){
         incDecrorderDisplayed = incDecrorderDisplayed -1 ;
         orderDisplayed = arrayRandom[incDecrorderDisplayed];
+        finalArray[orderDisplayed].timesSeen++;
    document.getElementById('placeToPrint').innerHTML = 
    `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2>` ;
     }else if(incDecrorderDisplayed === 0){
