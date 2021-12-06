@@ -170,7 +170,8 @@ const addQuoteToFav = () => {
     } else if (!compareQuote(favsArray, finalArray[orderDisplayed]._sentence)) {
         finalArray[orderDisplayed].fav++;
         addToFav(finalArray[orderDisplayed])
-        document.getElementById('placeToPrint').innerHTML = `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
+        document.getElementById('placeToPrint').innerHTML = 
+            `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
     } else {
         document.getElementById('placeToPrint').innerHTML =
             `<h2 id='warning'> You already added that quote to favs. </h2>`
@@ -209,7 +210,8 @@ const prevQuote = () => {
         document.getElementById('placeToPrint').innerHTML =
             `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2>`;
     } else if (incDecrorderDisplayed === 0) {
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>`;
+        document.getElementById('placeToPrint').innerHTML = 
+            `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>`;
     } else if (incDecrorderDisplayed === -1) {
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'>There is no previous Quote. Press Next to see the first one.</h2>`;
     }
@@ -349,7 +351,8 @@ const printAllQuotes = () => {
         return `${a._sentence} <br><span id="authorsquotes"> By  ${a._author} </span><br><br>`;
     })
     document.getElementById('placeToPrint').innerHTML =
-        `<h2 id='successfulAction'> ${finalArray.length} quotes: </h2><h2> ${allQuotesOrdered.join('\n')}  <a href="#" class="navigationButton">Go back to the Top</a></h2>`;
+        `<h2 id='successfulAction'> ${finalArray.length} quotes: </h2><h2> ${allQuotesOrdered.join('\n')}  
+        <a href="#" class="navigationButton">Go back to the Top</a></h2>`;
 }
 
 
