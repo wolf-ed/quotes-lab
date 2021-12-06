@@ -70,12 +70,12 @@ const getAuthors = (arr) => {
     let returnAuthorsObjects = []; //array of objects-authors with authors and number of quotes
 
     for (let i = 0; i < finalArray.length; i++) {
-        if (!authorsArray.some(quo => quo === arr[i]._author)) {
-            let newA = authorMaker(arr[i]._author);
-            authorsArray.push(arr[i]._author);
+        if (!authorsArray.some(quo => quo === arr[i].author)) {
+            let newA = authorMaker(arr[i].author);
+            authorsArray.push(arr[i].author);
             returnAuthorsObjects.push(newA);
         } else {
-            let indexAu = authorsArray.indexOf(arr[i]._author);
+            let indexAu = authorsArray.indexOf(arr[i].author);
             returnAuthorsObjects[indexAu].increaseQuotes();
         }
     } //end of for
@@ -153,13 +153,13 @@ const printNextQuote = () => {
 
         //select where it will be printed
         document.getElementById('placeToPrint').innerHTML =
-            `<h2>${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2> `;
+            `<h2>${finalArray[orderDisplayed].sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span></h2> `;
     }
 };
 
 
 const compareQuote = (arr, num) => {
-    return arr.some(numb => num === numb._sentence)
+    return arr.some(numb => num === numb.sentence)
 }
 //implement add to favs
 
@@ -167,11 +167,11 @@ const addQuoteToFav = () => {
     document.getElementById('favb').style = 'visibility: hidden;';
     if (incDecrorderDisplayed === -1) {
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> There is no quote to add, press Next to see the first quote. </h2>`;
-    } else if (!compareQuote(favsArray, finalArray[orderDisplayed]._sentence)) {
+    } else if (!compareQuote(favsArray, finalArray[orderDisplayed].sentence)) {
         finalArray[orderDisplayed].fav++;
         addToFav(finalArray[orderDisplayed])
         document.getElementById('placeToPrint').innerHTML = 
-            `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
+            `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
     } else {
         document.getElementById('placeToPrint').innerHTML =
             `<h2 id='warning'> You already added that quote to favs. </h2>`
@@ -183,7 +183,7 @@ const addQuoteToFav = () => {
 const printAllFavs = () => {
     document.getElementById('favb').style = 'visibility: hidden;';
     let allFavs = favsArray.map((a) => {
-        return `${a._sentence} <br><span id="authorsquotes"> By  ${a._author} </span><br><br>`;
+        return `${a.sentence} <br><span id="authorsquotes"> By  ${a.author} </span><br><br>`;
     })
     if (favsArray.length === 0) {
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> You don't have favorite quotes yet. </h2>`;
@@ -208,7 +208,7 @@ const prevQuote = () => {
         orderDisplayed = arrayRandom[incDecrorderDisplayed];
         finalArray[orderDisplayed].timesSeen++;
         document.getElementById('placeToPrint').innerHTML =
-            `<h2> ${finalArray[orderDisplayed]._sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed]._author} </span></h2>`;
+            `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span></h2>`;
     } else if (incDecrorderDisplayed === 0) {
         document.getElementById('placeToPrint').innerHTML = 
             `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>`;
@@ -246,8 +246,8 @@ const getQuote = () => {
             document.getElementById("typeNewAuthor").value = "";
             usersQuotes.push(newQuote);
             document.getElementById('printYourQuotes').innerHTML =
-                `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex]._sentence} 
-                <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
+                `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex].sentence} 
+                <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
             finalArray.push(newQuote);
         }
     }
@@ -259,14 +259,14 @@ let usersQuoteIndex = 0;
 const printYourQuotes = () => {
     if (usersQuoteIndex < usersQuotes.length) {
         document.getElementById('printYourQuotes').innerHTML =
-            `<h2> ${usersQuotes[usersQuoteIndex]._sentence}  
-            <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
+            `<h2> ${usersQuotes[usersQuoteIndex].sentence}  
+            <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
         usersQuoteIndex++;
     } else {
         usersQuoteIndex = 0;
         document.getElementById('printYourQuotes').innerHTML =
-            `<h2> ${usersQuotes[usersQuoteIndex]._sentence}  
-            <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex]._author}</span></h2>`;
+            `<h2> ${usersQuotes[usersQuoteIndex].sentence}  
+            <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
     }
 }
 
@@ -290,7 +290,7 @@ const searchQuote = () => {
             }
         }
         let allFound = quotesFound.map((a) => {
-            return `${a._sentence}  <br> <span id="authorsquotes">by ${a._author}</span><br><br>`;
+            return `${a.sentence}  <br> <span id="authorsquotes">by ${a.author}</span><br><br>`;
         })
         document.getElementById("wordToSearch").value = "";
         if (numberOfQuotesFound === 0) {
@@ -309,10 +309,10 @@ const searchQuote = () => {
 }
 
 const compareAuthorsNames = (a, b) => {
-    if (a._author < b._author) {
+    if (a.author < b.author) {
         return -1;
     }
-    if (a._author > b._author) {
+    if (a.author > b.author) {
         return 1;
     }
     return 0;
@@ -325,7 +325,7 @@ const printAllAuthors = () => {
     let arrayAuthors = getAuthors(finalArray);
     let orderAuthors = arrayAuthors.sort(compareAuthorsNames);
     let allAuthors = orderAuthors.map((a) => {
-        return `${a._author} - with ${a._numberQuotes} quotes. <br><br>`;
+        return `${a.author} - with ${a._numberQuotes} quotes. <br><br>`;
     })
     document.getElementById('placeToPrint').innerHTML =
         `<h2 id='successfulAction'> ${arrayAuthors.length} authors: </h2>
@@ -334,10 +334,10 @@ const printAllAuthors = () => {
 
 
 const compareLengthQuotes = (a, b) => {
-    if (a._sentence < b._sentence) {
+    if (a.sentence < b.sentence) {
         return -1;
     }
-    if (a._sentence > b._sentence) {
+    if (a.sentence > b.sentence) {
         return 1;
     }
     return 0;
@@ -348,7 +348,7 @@ const printAllQuotes = () => {
     document.getElementById('favb').style = 'visibility: hidden;';
     let allQuotesArray = finalArray.sort(compareLengthQuotes);
     let allQuotesOrdered = allQuotesArray.map((a) => {
-        return `${a._sentence} <br><span id="authorsquotes"> By  ${a._author} </span><br><br>`;
+        return `${a.sentence} <br><span id="authorsquotes"> By  ${a.author} </span><br><br>`;
     })
     document.getElementById('placeToPrint').innerHTML =
         `<h2 id='successfulAction'> ${finalArray.length} quotes: </h2><h2> ${allQuotesOrdered.join('\n')}  
