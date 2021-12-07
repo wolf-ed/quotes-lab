@@ -88,11 +88,6 @@ const getAuthors = (arr) => {
 
 
 
-let favsArray = [];
-
-const addToFav = (favQuote) => {
-    favsArray.push(favQuote);
-}
 
 
 
@@ -149,11 +144,35 @@ const printNextQuote = () => {
 };
 
 
+//function to print previous quote
+const prevQuote = () => {
+    document.getElementById('favb').style = 'visibility: visible;';
+    if (incDecrorderDisplayed > 0) {
+        incDecrorderDisplayed = incDecrorderDisplayed - 1;
+        orderDisplayed = arrayRandom[incDecrorderDisplayed];
+        finalArray[orderDisplayed].timesSeen++;
+        document.getElementById('placeToPrint').innerHTML =
+            `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span></h2>`;
+    } else if (incDecrorderDisplayed === 0) {
+        document.getElementById('placeToPrint').innerHTML = 
+            `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>`;
+    } else if (incDecrorderDisplayed === -1) {
+        document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'>There is no previous Quote. Press Next to see the first one.</h2>`;
+    }
+};
+
+
+
+
+
 const compareQuote = (arr, num) => {
     return arr.some(numb => num === numb.sentence)
 }
 //implement add to favs
-
+let favsArray = [];
+const addToFav = (favQuote) => {
+    favsArray.push(favQuote);
+}
 const addQuoteToFav = () => {
     document.getElementById('favb').style = 'visibility: hidden;';
     if (incDecrorderDisplayed === -1) {
@@ -191,22 +210,7 @@ const printAllFavs = () => {
 }
 
 
-//function to print previous quote
-const prevQuote = () => {
-    document.getElementById('favb').style = 'visibility: visible;';
-    if (incDecrorderDisplayed > 0) {
-        incDecrorderDisplayed = incDecrorderDisplayed - 1;
-        orderDisplayed = arrayRandom[incDecrorderDisplayed];
-        finalArray[orderDisplayed].timesSeen++;
-        document.getElementById('placeToPrint').innerHTML =
-            `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span></h2>`;
-    } else if (incDecrorderDisplayed === 0) {
-        document.getElementById('placeToPrint').innerHTML = 
-            `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>`;
-    } else if (incDecrorderDisplayed === -1) {
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'>There is no previous Quote. Press Next to see the first one.</h2>`;
-    }
-};
+
 
 
 //function to check if a quote is already added
@@ -350,10 +354,10 @@ const printAllQuotes = () => {
 
 
 //select button we will link
+const printPrevButton = document.getElementById('prev');
 const nextButton = document.getElementById('nextb');
 const favButton = document.getElementById('favb');
 const printFavsButton = document.getElementById('printFavs');
-const printPrevButton = document.getElementById('prev');
 const printAuthorsButton = document.getElementById('seeAuthors');
 const printYourQuotesButton = document.getElementById('printYourQuotesButton');
 const addNewQuote = document.getElementById('newQuote');
@@ -364,12 +368,12 @@ const buttonSearch = document.getElementById('searchQuotesByWord');
 
 
 //link button to functions
+printPrevButton.addEventListener('click', prevQuote);
 nextButton.addEventListener('click', printNextQuote);
 favButton.addEventListener('click', addQuoteToFav);
 printFavsButton.addEventListener('click', printAllFavs);
-printPrevButton.addEventListener('click', prevQuote);
+printAuthorsButton.addEventListener('click', printAllAuthors);
 printYourQuotesButton.addEventListener('click', printYourQuotes);
 addNewQuote.addEventListener('click', getQuote);
-printAuthorsButton.addEventListener('click', printAllAuthors);
 seeAllQuotes.addEventListener('click', printAllQuotes);
 buttonSearch.addEventListener('click', searchQuote)
