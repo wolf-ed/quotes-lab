@@ -95,16 +95,7 @@ const addToFav = (favQuote) => {
 }
 
 
-//select button we will link
-const nextButton = document.getElementById('nextb');
-const favButton = document.getElementById('favb');
-const printFavsButton = document.getElementById('printFavs');
-const printPrevButton = document.getElementById('prev');
-const printAuthorsButton = document.getElementById('seeAuthors');
-const printYourQuotesButton = document.getElementById('printYourQuotesButton');
-const addNewQuote = document.getElementById('newQuote');
-const seeAllQuotes = document.getElementById('allQuotes');
-const buttonSearch = document.getElementById('searchQuotesByWord');
+
 
 const compare = (arr, num) => {
     return arr.some(numb => num === numb)
@@ -358,6 +349,21 @@ const printAllQuotes = () => {
 
 
 
+//select button we will link
+const nextButton = document.getElementById('nextb');
+const favButton = document.getElementById('favb');
+const printFavsButton = document.getElementById('printFavs');
+const printPrevButton = document.getElementById('prev');
+const printAuthorsButton = document.getElementById('seeAuthors');
+const printYourQuotesButton = document.getElementById('printYourQuotesButton');
+const addNewQuote = document.getElementById('newQuote');
+const seeAllQuotes = document.getElementById('allQuotes');
+const buttonSearch = document.getElementById('searchQuotesByWord');
+
+
+
+
+//link button to functions
 nextButton.addEventListener('click', printNextQuote);
 favButton.addEventListener('click', addQuoteToFav);
 printFavsButton.addEventListener('click', printAllFavs);
