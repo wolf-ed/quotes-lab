@@ -73,6 +73,12 @@ h2#warning {
 
 .quotesBox {
     min-height: 10rem;
+    /* DEFAULT VALUES
+    position: static; 
+    visibility: visible;
+    */
+    /*position: absolute;
+    visibility: hidden;*/
 }
 
 #favb{
