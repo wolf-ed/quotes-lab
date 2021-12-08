@@ -36,10 +36,35 @@ header {
 
 body {
     max-width: 100%;
-    justify-content: center;
-    align-items: center;
     display: block;
     background-color: black;
+}
+
+#mainbox {
+    display: inline-block;
+    min-width: 90%;
+    max-width: 90%;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-left: 5%;
+}
+
+#navigationmenu{
+    text-align: left;
+    display: inline-block;
+    min-width: 10%;
+    max-width: 10%;
+    position: fixed;
+    top: 5em;
+    left: 0;
+}
+#navigationmenu ul, #navigationmenu ul li{
+    width: fit-content;
+    list-style-type: none;
+}
+ul{
+display: inline;
 }
 
 h2#warning {
@@ -195,6 +220,7 @@ footer {
   }
 
   @media only screen and (max-width: 480px) {
+
     h2 span#authorsquotes{
         left: 35%;
         padding-right: 2em;
@@ -213,4 +239,22 @@ footer {
         max-width: 95%;
         margin: 0 auto 0 auto;
     }
+
+    #mainbox {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+    
+    #navigationmenu{
+        text-align: center;
+        display: block;
+        position:initial;
+    }
+    ul{
+        display: block;
+        text-align: center;
+        }
+
 }

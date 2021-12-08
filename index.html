@@ -14,41 +14,50 @@
         <h1>QUOTES-LAB</h1>
     </header>
 
-    <section class="buttonsBox">
+    <nav id="navigationmenu">
+        <ul>
+            <li> <button role="button" class="navigationbuttons" id="printFavs">See Favs</button></li>
+            <li> <button role="button" class="navigationbuttons" id="seeAuthors">See Authors</button></li>
+            <li> <button role="button" class="navigationbuttons" id="allQuotes">All Quotes</button></li>
+        </ul>
+    </nav>
 
-        <button role="button" id="prev">Prev</button>
-        <button role="button" id="printFavs">See Favs</button>
-        <button role="button" id="seeAuthors">See Authors</button>
-        <button role="button" id="allQuotes">All Quotes</button>
-        <button role="button" id="nextb">Next</button>
-    </section>
 
-    <article class="quotesBox">
-        <h2 id="placeToPrint">Press NEXT to print the first Quote</h2>
-        <h2><button role="button" id="favb">Add Fav</button></h2>
-    </article>
+    <div id="mainbox">
+        <section class="buttonsBox">
 
-    <article class="buttonsBox2">
-        <h2>Write your quote: </h2>
-        <input type="text" id="typeNewQuote" placeholder="Type new Quote" onblur="getVal ()">
-        <input type="text" id="typeNewAuthor" placeholder="Type Quote's Author" onblur="getVal ()">
+            <button role="button" id="prev">Prev</button>
+            <button role="button" id="nextb">Next</button>
+        </section>
 
-        <button role="button" id="newQuote">Press to submit Quote</button>
+        <article class="quotesBox">
+            <h2 id="placeToPrint">Press NEXT to print the first Quote</h2>
+            <h2><button role="button" id="favb">Add Fav</button></h2>
+        </article>
 
-     
-        <br>
-        <button role="button" id="printYourQuotesButton">See your Quotes</button>
+        <article class="buttonsBox2">
+            <h2>Write your quote: </h2>
+            <input type="text" id="typeNewQuote" placeholder="Type new Quote" onblur="getVal ()">
+            <input type="text" id="typeNewAuthor" placeholder="Type Quote's Author" onblur="getVal ()">
 
-        <h2 id="printYourQuotes"></h2>
-    </article>
+            <button role="button" id="newQuote">Press to submit Quote</button>
 
-    <article class="buttonsBox2">
-        <h2>Search quotes: </h2>
-        <input type="text" id="wordToSearch" placeholder="Type text to search: " onblur="getVal ()">
 
-        <button role="button" id="searchQuotesByWord">Search</button>
-        <h2 id="quotesFound"></h2>
-    </article>
+            <br>
+            <button role="button" id="printYourQuotesButton">See your Quotes</button>
+
+            <h2 id="printYourQuotes"></h2>
+        </article>
+
+        <article class="buttonsBox2">
+            <h2>Search quotes: </h2>
+            <input type="text" id="wordToSearch" placeholder="Type text to search: " onblur="getVal ()">
+
+            <button role="button" id="searchQuotesByWord">Search</button>
+            <h2 id="quotesFound"></h2>
+        </article>
+
+    </div>
 
 
 
