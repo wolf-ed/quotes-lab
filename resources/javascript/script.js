@@ -99,6 +99,8 @@ const hideDOM = (element) => {
 const showRandomQuotes = () => {
     document.getElementById('placeToPrintAuthors').innerHTML = '';
     document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    document.getElementById('quotesFound').innerHTML = '';
+    quotesFound
     hideDOM('favsBox')
     hideDOM('authorsBox')
     hideDOM('allQuotesBox')
@@ -125,6 +127,7 @@ const navigationButtonSearchWordFunction = () => {
 const navigationButtonSeeFavsFunction = () => {
     document.getElementById('placeToPrintAuthors').innerHTML = '';
     document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    document.getElementById('quotesFound').innerHTML = '';
     hideDOM('searchQuote')
     hideDOM('authorsBox')
     hideDOM('allQuotesBox')
@@ -138,6 +141,7 @@ const navigationButtonSeeFavsFunction = () => {
 
 const navigationButtonSeeAllAuthors = () => {
     document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    document.getElementById('quotesFound').innerHTML = '';
     hideDOM('quotesBox')
     hideDOM('searchQuote')
     hideDOM('favsBox')
@@ -151,6 +155,7 @@ const navigationButtonSeeAllAuthors = () => {
 
 const navigationButtonSeeAllQuotes = () => {
     document.getElementById('placeToPrintAuthors').innerHTML = '';
+    document.getElementById('quotesFound').innerHTML = '';
     hideDOM('searchQuote')
     hideDOM('authorsBox')
     hideDOM('favsBox')
@@ -166,6 +171,7 @@ const navigationButtonSeeAllQuotes = () => {
 const navigationButtonAddNewQuote = () => {
     document.getElementById('placeToPrintAuthors').innerHTML = '';
     document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    document.getElementById('quotesFound').innerHTML = '';
     hideDOM('searchQuote')
     hideDOM('authorsBox')
     hideDOM('allQuotesBox')
@@ -182,6 +188,7 @@ const navigationButtonAddNewQuote = () => {
 const navigationButtonSeeAddedQuotes = () => {
     document.getElementById('placeToPrintAuthors').innerHTML = '';
     document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    document.getElementById('quotesFound').innerHTML = '';
     hideDOM('searchQuote')
     hideDOM('authorsBox')
     hideDOM('allQuotesBox')
