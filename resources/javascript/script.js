@@ -86,11 +86,111 @@ const getAuthors = (arr) => {
 } //end getAuthors
 
 
+const showDOM = (element) => {
+    document.getElementById(element).style.position = 'static';
+    document.getElementById(element).style.visibility = 'visible';
+}
+
+const hideDOM = (element) => {
+    document.getElementById(element).style.position = 'absolute';
+    document.getElementById(element).style.visibility = 'hidden';
+}
+
+const showRandomQuotes = () => {
+    document.getElementById('placeToPrintAuthors').innerHTML = '';
+    document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    hideDOM('favsBox')
+    hideDOM('authorsBox')
+    hideDOM('allQuotesBox')
+    hideDOM('addQuote')
+    hideDOM('searchQuote')
+    hideDOM('seeyourQuotesBox')
+
+    showDOM('quotesBox')
+}
+
+const navigationButtonSearchWordFunction = () => {
+    document.getElementById('placeToPrintAuthors').innerHTML = '';
+    document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    hideDOM('favsBox')
+    hideDOM('authorsBox')
+    hideDOM('allQuotesBox')
+    hideDOM('addQuote')
+    hideDOM('quotesBox')
+    hideDOM('seeyourQuotesBox')
+
+    showDOM('searchQuote')
+}
+
+const navigationButtonSeeFavsFunction = () => {
+    document.getElementById('placeToPrintAuthors').innerHTML = '';
+    document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    hideDOM('searchQuote')
+    hideDOM('authorsBox')
+    hideDOM('allQuotesBox')
+    hideDOM('addQuote')
+    hideDOM('quotesBox')
+    hideDOM('seeyourQuotesBox')
+
+    showDOM('favsBox');
+
+}
+
+const navigationButtonSeeAllAuthors = () => {
+    document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    hideDOM('quotesBox')
+    hideDOM('searchQuote')
+    hideDOM('favsBox')
+    hideDOM('allQuotesBox')
+    hideDOM('addQuote')
+    hideDOM('seeyourQuotesBox')
+
+    showDOM('authorsBox');
+    document.dispatchEvent(printAllAuthors())
+}
+
+const navigationButtonSeeAllQuotes = () => {
+    document.getElementById('placeToPrintAuthors').innerHTML = '';
+    hideDOM('searchQuote')
+    hideDOM('authorsBox')
+    hideDOM('favsBox')
+    hideDOM('addQuote')
+    hideDOM('quotesBox')
+    hideDOM('seeyourQuotesBox')
+    
+    showDOM('allQuotesBox');
+
+    document.dispatchEvent(printAllQuotes())
+}
+
+const navigationButtonAddNewQuote = () => {
+    document.getElementById('placeToPrintAuthors').innerHTML = '';
+    document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    hideDOM('searchQuote')
+    hideDOM('authorsBox')
+    hideDOM('allQuotesBox')
+    hideDOM('favsBox')
+    hideDOM('quotesBox')
+    hideDOM('seeyourQuotesBox')
+    
+    showDOM('addQuote');
+}
+
+  
 
 
+const navigationButtonSeeAddedQuotes = () => {
+    document.getElementById('placeToPrintAuthors').innerHTML = '';
+    document.getElementById('placeToPrintAllQuotes').innerHTML = '';
+    hideDOM('searchQuote')
+    hideDOM('authorsBox')
+    hideDOM('allQuotesBox')
+    hideDOM('favsBox')
+    hideDOM('quotesBox')
+    hideDOM('addQuote')
 
-
-
+    showDOM('seeyourQuotesBox');
+}
 
 const compare = (arr, num) => {
     return arr.some(numb => num === numb)
@@ -134,7 +234,6 @@ const printNextQuote = () => {
     } else {
 
         orderDisplayed = arrayRandom[incDecrorderDisplayed];
-        document.getElementById('favb').style = 'visibility: visible;';
         finalArray[orderDisplayed].timesSeen++;
 
         //select where it will be printed
@@ -146,7 +245,6 @@ const printNextQuote = () => {
 
 //function to print previous quote
 const prevQuote = () => {
-    document.getElementById('favb').style = 'visibility: visible;';
     if (incDecrorderDisplayed > 0) {
         incDecrorderDisplayed = incDecrorderDisplayed - 1;
         orderDisplayed = arrayRandom[incDecrorderDisplayed];
@@ -154,7 +252,7 @@ const prevQuote = () => {
         document.getElementById('placeToPrint').innerHTML =
             `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span></h2>`;
     } else if (incDecrorderDisplayed === 0) {
-        document.getElementById('placeToPrint').innerHTML = 
+        document.getElementById('placeToPrint').innerHTML =
             `<h2 id='warning'>There is no previous Quote to the one you just saw. Press Next again to see a second quote.</h2>`;
     } else if (incDecrorderDisplayed === -1) {
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'>There is no previous Quote. Press Next to see the first one.</h2>`;
@@ -174,13 +272,12 @@ const addToFav = (favQuote) => {
     favsArray.push(favQuote);
 }
 const addQuoteToFav = () => {
-    document.getElementById('favb').style = 'visibility: hidden;';
     if (incDecrorderDisplayed === -1) {
         document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> There is no quote to add, press Next to see the first quote. </h2>`;
     } else if (!compareQuote(favsArray, finalArray[orderDisplayed].sentence)) {
         finalArray[orderDisplayed].fav++;
         addToFav(finalArray[orderDisplayed])
-        document.getElementById('placeToPrint').innerHTML = 
+        document.getElementById('placeToPrint').innerHTML =
             `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
     } else {
         document.getElementById('placeToPrint').innerHTML =
@@ -191,18 +288,18 @@ const addQuoteToFav = () => {
 
 
 const printAllFavs = () => {
-    document.getElementById('favb').style = 'visibility: hidden;';
+
     let allFavs = favsArray.map((a) => {
         return `${a.sentence} <br><span id="authorsquotes"> By  ${a.author} </span><br><br>`;
     })
     if (favsArray.length === 0) {
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='warning'> You don't have favorite quotes yet. </h2>`;
+        document.getElementById('placeToPrintFavs').innerHTML = `<h2 id='warning'> You don't have favorite quotes yet. </h2>`;
     } else if (favsArray.length === 1) {
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> Your Fav: </h2><h2> ${allFavs.join('\n')} </h2>`;
+        document.getElementById('placeToPrintFavs').innerHTML = `<h2 id='successfulAction'> Your Fav: </h2><h2> ${allFavs.join('\n')} </h2>`;
     } else if (favsArray.length > 1 && favsArray.length < 3) {
-        document.getElementById('placeToPrint').innerHTML = `<h2 id='successfulAction'> Your Favs: </h2><h2> ${allFavs.join('\n')} </h2>`;
+        document.getElementById('placeToPrintFavs').innerHTML = `<h2 id='successfulAction'> Your Favs: </h2><h2> ${allFavs.join('\n')} </h2>`;
     } else {
-        document.getElementById('placeToPrint').innerHTML =
+        document.getElementById('placeToPrintFavs').innerHTML =
             `<h2 id='successfulAction'> Your Favs: </h2><h2> ${allFavs.join('\n')}  <a href="#" class="navigationButton">Go back to the Top</a></h2>`;
     }
     //  
@@ -225,22 +322,21 @@ const checkFinalArray = (word) => {
 
 //function to add a new quote
 const getQuote = () => {
-    document.getElementById('favb').style = 'visibility: hidden;';
     const userQuote = document.getElementById('typeNewQuote').value;
     const userQuoteAuthor = document.getElementById('typeNewAuthor').value;
 
     if (userQuote === '' || userQuoteAuthor === '') {
-        document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>Please type both quote and author</h2>`;
+        document.getElementById('printYourQuotesJustAdded').innerHTML = `<h2 id='warning'>Please type both quote and author</h2>`;
     } else {
 
         if (checkFinalArray(userQuote)) {
-            document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>That quote is already added</h2>`;
+            document.getElementById('printYourQuotesJustAdded').innerHTML = `<h2 id='warning'>That quote is already added</h2>`;
         } else {
             let newQuote = quotesMaker(userQuote, userQuoteAuthor);
             document.getElementById("typeNewQuote").value = "";
             document.getElementById("typeNewAuthor").value = "";
             usersQuotes.push(newQuote);
-            document.getElementById('printYourQuotes').innerHTML =
+            document.getElementById('printYourQuotesJustAdded').innerHTML =
                 `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex].sentence} 
                 <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
             finalArray.push(newQuote);
@@ -252,6 +348,9 @@ const getQuote = () => {
 //funtion to print next quote added by the user
 let usersQuoteIndex = 0;
 const printYourQuotes = () => {
+    if(usersQuoteIndex === 0){
+        document.getElementById('printYourQuotes').innerHTML = `<h2 id='warning'>You didn't add any quote yet</h2>`
+    }
     if (usersQuoteIndex < usersQuotes.length) {
         document.getElementById('printYourQuotes').innerHTML =
             `<h2> ${usersQuotes[usersQuoteIndex].sentence}  
@@ -264,7 +363,6 @@ const printYourQuotes = () => {
             <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
     }
 }
-
 
 
 
@@ -316,13 +414,12 @@ const compareAuthorsNames = (a, b) => {
 
 
 const printAllAuthors = () => {
-    document.getElementById('favb').style = 'visibility: hidden;';
     let arrayAuthors = getAuthors(finalArray);
     let orderAuthors = arrayAuthors.sort(compareAuthorsNames);
     let allAuthors = orderAuthors.map((a) => {
         return `${a.author} - with ${a._numberQuotes} quotes. <br><br>`;
     })
-    document.getElementById('placeToPrint').innerHTML =
+    document.getElementById('placeToPrintAuthors').innerHTML =
         `<h2 id='successfulAction'> ${arrayAuthors.length} authors: </h2>
          <h2> ${allAuthors.join('\n')} <br><a href="#" class="navigationButton">Go back to the Top</a></h2>`;
 }
@@ -340,17 +437,19 @@ const compareLengthQuotes = (a, b) => {
 
 
 const printAllQuotes = () => {
-    document.getElementById('favb').style = 'visibility: hidden;';
     let allQuotesArray = finalArray.sort(compareLengthQuotes);
     let allQuotesOrdered = allQuotesArray.map((a) => {
         return `${a.sentence} <br><span id="authorsquotes"> By  ${a.author} </span><br><br>`;
     })
-    document.getElementById('placeToPrint').innerHTML =
+    document.getElementById('placeToPrintAllQuotes').innerHTML =
         `<h2 id='successfulAction'> ${finalArray.length} quotes: </h2><h2> ${allQuotesOrdered.join('\n')}  
         <a href="#" class="navigationButton">Go back to the Top</a></h2>`;
 }
 
 
+
+//navigationmenu buttons
+const randomQuotes = document.getElementById('randomQuotes');
 
 
 //select button we will link
@@ -358,22 +457,27 @@ const printPrevButton = document.getElementById('prev');
 const nextButton = document.getElementById('nextb');
 const favButton = document.getElementById('favb');
 const printFavsButton = document.getElementById('printFavs');
-const printAuthorsButton = document.getElementById('seeAuthors');
+
 const printYourQuotesButton = document.getElementById('printYourQuotesButton');
 const addNewQuote = document.getElementById('newQuote');
 const seeAllQuotes = document.getElementById('allQuotes');
 const buttonSearch = document.getElementById('searchQuotesByWord');
-
-
+const navigationButtonSearchWord = document.getElementById('searchQuotes');
 
 
 //link button to functions
 printPrevButton.addEventListener('click', prevQuote);
 nextButton.addEventListener('click', printNextQuote);
 favButton.addEventListener('click', addQuoteToFav);
-printFavsButton.addEventListener('click', printAllFavs);
-printAuthorsButton.addEventListener('click', printAllAuthors);
 printYourQuotesButton.addEventListener('click', printYourQuotes);
 addNewQuote.addEventListener('click', getQuote);
 seeAllQuotes.addEventListener('click', printAllQuotes);
-buttonSearch.addEventListener('click', searchQuote)
+buttonSearch.addEventListener('click', searchQuote);
+randomQuotes.addEventListener('click', showRandomQuotes);
+navigationButtonSearchWord.addEventListener('click', navigationButtonSearchWordFunction);
+printFavsButton.addEventListener('click', navigationButtonSeeFavsFunction);
+document.getElementById('printYourFavs').addEventListener('click', printAllFavs);
+document.getElementById('seeAuthors').addEventListener('click', navigationButtonSeeAllAuthors);
+document.getElementById('allQuotes').addEventListener('click', navigationButtonSeeAllQuotes);
+document.getElementById('addNewQuote').addEventListener('click', navigationButtonAddNewQuote);
+document.getElementById('seeAddedQuotes').addEventListener('click', navigationButtonSeeAddedQuotes);

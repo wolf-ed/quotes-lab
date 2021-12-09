@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quotes-lab</title>
+    <!-- 
+           <link rel="stylesheet" href="./resources/css/reset.css" />
+         -->
     <link rel="stylesheet" href="./resources/css/styles.css" />
+
 </head>
 
 <body>
@@ -16,47 +20,68 @@
 
     <nav id="navigationmenu">
         <ul>
+            <li> <button role="button" class="navigationbarbuttons" id="searchQuotes">Search quotes</button></li>
+            <li> <button role="button" class="navigationbarbuttons" id="randomQuotes">Random Quotes</button></li>
             <li> <button role="button" class="navigationbarbuttons" id="printFavs">See Favs</button></li>
             <li> <button role="button" class="navigationbarbuttons" id="seeAuthors">See Authors</button></li>
             <li> <button role="button" class="navigationbarbuttons" id="allQuotes">All Quotes</button></li>
+            <li> <button role="button" class="navigationbarbuttons" id="addNewQuote">Add new quote</button></li>
+            <li> <button role="button" class="navigationbarbuttons" id="seeAddedQuotes">See added quotes</button></li>
         </ul>
     </nav>
 
-
     <div id="mainbox">
-        
 
-        <article class="quotesBox">
+
+        <article class="quotesBox" id="quotesBox">
             <section class="buttonsBox">
 
                 <button role="button" id="prev">Prev</button>
                 <button role="button" id="nextb">Next</button>
             </section>
-            
+
             <h2 id="placeToPrint">Press NEXT to print the first Quote</h2>
-            <h2><button role="button" id="favb">Add Fav</button></h2>
+            <section class="buttonsBox"><button role="button" id="favb">Add Fav</button></section>
         </article>
 
-        <article class="buttonsBox2">
+        <article class="quotesBox" id="favsBox">
+
+            <h2><button role="button" class="navigationbarbuttons" id="printYourFavs">See your favs</button></h2>
+            <h2 id="placeToPrintFavs">Go to Random Quotes to add new Favorites</h2>
+        </article>
+
+        <article class="quotesBox" id="authorsBox">
+
+            <h2 id="placeToPrintAuthors"></h2>
+        </article>
+
+        <article class="quotesBox" id="allQuotesBox">
+
+            <h2 id="placeToPrintAllQuotes"></h2>
+        </article>
+
+        <article class="buttonsBox2" id="addQuote">
             <h2>Write your quote: </h2>
             <input type="text" id="typeNewQuote" placeholder="Type new Quote" onblur="getVal ()">
             <input type="text" id="typeNewAuthor" placeholder="Type Quote's Author" onblur="getVal ()">
 
             <button role="button" id="newQuote">Press to submit Quote</button>
-
-
-            <br>
-            <button role="button" id="printYourQuotesButton">See your Quotes</button>
-
-            <h2 id="printYourQuotes"></h2>
+            <h2 id="printYourQuotesJustAdded"></h2>
         </article>
 
-        <article class="buttonsBox2">
+        <article class="buttonsBox2" id="searchQuote">
             <h2>Search quotes: </h2>
             <input type="text" id="wordToSearch" placeholder="Type text to search: " onblur="getVal ()">
 
             <button role="button" id="searchQuotesByWord">Search</button>
             <h2 id="quotesFound"></h2>
+        </article>
+
+        <article class="buttonsBox2" id="seeyourQuotesBox">
+
+            <button role="button" id="printYourQuotesButton">See your Quotes</button>
+
+            <h2 id="printYourQuotes"></h2>
         </article>
 
     </div>
