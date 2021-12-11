@@ -347,6 +347,8 @@ const getQuote = () => {
                 `<h2 id='successfulAction'> Quote added: </h2><h2> ${usersQuotes[usersQuoteIndex].sentence} 
                 <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
             finalArray.push(newQuote);
+            document.getElementById('printYourQuotes').innerHTML = `<h2> ${usersQuotes[usersQuoteIndex].sentence} 
+            <span id="authorsquotes">by ${usersQuotes[usersQuoteIndex].author}</span></h2>`;
         }
     }
 };
