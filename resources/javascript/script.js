@@ -284,8 +284,13 @@ const addQuoteToFav = () => {
     } else if (!compareQuote(favsArray, finalArray[orderDisplayed].sentence)) {
         finalArray[orderDisplayed].fav++;
         addToFav(finalArray[orderDisplayed])
+        document.getElementById('placeToPrintFavs').innerHTML =
+        `<h2> ${finalArray[orderDisplayed].sentence} <br>
+        <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span><br>`
         document.getElementById('placeToPrint').innerHTML =
-            `<h2> ${finalArray[orderDisplayed].sentence} <br><br> <h2 id='successfulAction'> Quote added to Favs </h2>`
+            `<h2> ${finalArray[orderDisplayed].sentence} <br>
+            <span id="authorsquotes">by ${finalArray[orderDisplayed].author} </span><br>
+             <h2 id='successfulAction'> Quote added to Favs </h2>`
     } else {
         document.getElementById('placeToPrint').innerHTML =
             `<h2 id='warning'> You already added that quote to favs. </h2>`
