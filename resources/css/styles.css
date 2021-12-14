@@ -27,11 +27,14 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding: 2em auto 2em auto;
-    justify-content: center;
     background-color: black;
-    text-align: center;
+    text-align: left;
     display: block;
     border-bottom: 0.25em solid white;
+}
+
+#title {
+    padding-left: 1em;
 }
 
 body {
@@ -43,13 +46,23 @@ body {
 #mainbox {
     min-height: 25em;
     display: inline-block;
-    min-width: 90%;
-    max-width: 90%;
+    min-width: 80%;
+    max-width: 80%;
     justify-content: center;
     align-items: center;
     background-color: black;
-    margin-left: 5%;
+    margin-left: 8%;
     position: initial;
+}
+
+#hiddennavigationmenu{
+    text-align: left;
+    display: inline-block;
+    min-width: 10%;
+    max-width: 10%;
+    position: static;
+    background-color: white;
+    visibility: hidden;
 }
 
 #navigationmenu{
@@ -231,6 +244,10 @@ footer {
 
   @media only screen and (max-width: 480px) {
 
+    #hiddennavigationmenu{
+        position: absolute;
+    }
+
     h2 span#authorsquotes{
         left: 35%;
         padding-right: 2em;
@@ -251,19 +268,20 @@ footer {
     }
 
     #mainbox {
+        width: 70%;
         min-height: 15em;
-        display: inline-block;
+        display: block;
         justify-content: center;
         align-items: center;
         background-color: black;
-        position: initial;
-        right: 0;
+        position: static;
+        margin-left: 0%;
     }
     
     #navigationmenu{
         text-align: center;
-        display: inline-block;
-        position: initial;
+        display: block;
+        position: static;
     }
     ul{
         width: fit-content;
