@@ -1,5 +1,7 @@
 let sourceQuote =  
-     `The secret of your future is hidden in your daily routine
+     `If you look after your staff, they'll look after your customers. It's that simple.
+    Richard Branson
+    The secret of your future is hidden in your daily routine
     Mike Murdock
     If you’re not stubborn, you’ll give up on experiments too soon. And if you’re not flexible, you’ll pound your head against the wall and you won’t see a different solution to a problem you’re trying to solve.
     Jeff Bezos
